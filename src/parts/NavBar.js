@@ -14,13 +14,13 @@ function Bar() {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-      <NavDropdown title="Dropdown" id="collasible-nav-dropdown" >
-        <Form.Control size="sm" type="text" placeholder="Login" />
-        <Form.Control size="sm" type="text" placeholder="Password" />
-        <Button >Login</Button>
-        <Button >Register</Button>
+      <Nav.Link href="#home">Домой</Nav.Link>
+      <Nav.Link href="#author">Об авторе</Nav.Link>
+      <NavDropdown title="Авторизация"  id="collasible-nav-dropdown"  >
+        <Form.Control size="sm" type="text" placeholder="Логин"  />
+        <Form.Control size="sm" type="password" placeholder="Пароль" />
+        <Button >Логин</Button>
+        <Button >Регистрация</Button>
       </NavDropdown>
     </Nav>
     
