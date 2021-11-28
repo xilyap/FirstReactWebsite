@@ -8,13 +8,10 @@ import NavItem from '@restart/ui/esm/NavItem';
 
 
 
-function Bar(props) {
-  const [login, setLogin] = React.useState('');
-  const [password, setPassword] = React.useState(''); 
-
-  function handleButton(event){
-    props.OnClickEvent(login,password)
-  }
+function NavBarLogged(props) {
+	function handleButton(event){
+		props.OnClickEvent()
+	}
   return (
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
@@ -26,10 +23,8 @@ function Bar(props) {
     <Nav className="me-auto">
       <Nav.Link href="#home">Домой</Nav.Link>
       <Nav.Link href="#author">Об авторе</Nav.Link>
-      <NavDropdown title="Авторизация"  id="collasible-nav-dropdown"  >
-        <Form.Control size="sm" type="text" placeholder="Логин" value={login} onChange={e => setLogin(e.target.value)}/>
-        <Form.Control size="sm" type="password" placeholder="Пароль" value={password} onChange={e => setPassword(e.target.value)}/>
-        <Button onClick={handleButton} variant="dark">Логин</Button>
+      <NavDropdown title={props.username}  id="collasible-nav-dropdown"  >
+	  <Button onClick={handleButton} variant="dark">Выйти</Button>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
@@ -42,4 +37,4 @@ function Bar(props) {
 }
 
 
-export default Bar;
+export default NavBarLogged;

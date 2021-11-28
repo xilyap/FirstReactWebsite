@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { propTypes } from "react-bootstrap/esm/Image";
 import './NewGenerate.css';
 const { default: BaseArticle } = require("./BaseArticle");
 
 
-export default function NewGenerate() {
+export default function NewGenerate(props) {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
   
+
     // Примечание: пустой массив зависимостей [] означает, что
     // этот useEffect будет запущен один раз
     // аналогично componentDidMount()
@@ -36,7 +38,7 @@ export default function NewGenerate() {
       return (
         <div className='articles'>
           {items.map(item => (
-            <BaseArticle key={item.Id} title={item.Title} article={item.Contents}/>
+            <BaseArticle removeArticle={props.removeArticle} isEditorMode={props.isEditorMode} key={item.Id} Id={item.Id} title={item.Title} article={item.Contents}/>
           ))}
         </div>
       );

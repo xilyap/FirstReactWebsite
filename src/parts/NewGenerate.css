@@ -1,26 +1,41 @@
+.articles{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
 .main-article{
 	padding: 15pt;
-	  width: auto;
+	  min-width: 900pt;
 	  display: flex;
 	  flex-direction: column;
 	  align-items: center;
-	  background: #EEEDE7;
+	  background: #f3f3f3bb;
 	  margin: 5pt;
+	  min-height: 400pt;
   }
   .main-article img{
 	max-width:100%;
-  
   }
-  .main-article .image{
+  img{
+	  align-self: center;
+  }
+  .main-article image{
 	background-color: inherit;
-	width: 250pt;
-	height: auto;
+	max-width: auto;
+	align-self: center;
   }
   
   .main-article h3{
-	background-color: inherit;
+	background-size: auto;
 	font-weight: bold;
 	padding-bottom: 10pt;
+  }
+  .main-article button{
+	background-color: #000000;
+	color: #EEEDE7;
+	font-weight: bold;
+	padding-bottom: 10pt;
+	border-color: black;
   }
   .main-article p{
 	padding-top: 5pt;
