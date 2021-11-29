@@ -68,8 +68,22 @@ app.use('/content/articles', function (req, res, next) {
     console.log('Auth Request Body:', req.body);
     checkUserCredentials(req.body.name,req.body.pass,goodResAction);
   });
-
-
+  app.use('/replace-article', function (req, res, next) {
+    function goodResAction(){
+        console.log('Try to update');
+        DB().update('Articles', {
+          Contents: req.body.article,
+          Title: req.body.title
+        },{
+          Id: req.body.articleId
+          })
+        res.send(req.body)         
+    };
+    console.log('Auth Request Type:', req.method);
+    console.log('Auth Request Body:', req.body);
+    checkUserCredentials(req.body.name,req.body.pass,goodResAction);
+  });
+  
   
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'build/index.html'));

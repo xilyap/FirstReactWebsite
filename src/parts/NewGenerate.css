@@ -45,4 +45,14 @@
   .Accordion{
 	  padding-inline: 5pt;
   }
-  
+  .w-md-editor{
+	width: 100%;
+}
+.w-md-editor-content{
+	width: 100%;
+}
+  .space-between{
+	  display: flex;
+	  justify-content: space-between;
+	  width: 100%;
+  }

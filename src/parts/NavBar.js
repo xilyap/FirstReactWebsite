@@ -20,11 +20,11 @@ function Bar(props) {
   <Container>
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="#home">Бложик рукожопика</Navbar.Brand>
+  <Navbar.Brand href="/">Бложик рукожопика</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="#home">Домой</Nav.Link>
+      <Nav.Link href="/">Домой</Nav.Link>
       <Nav.Link href="#author">Об авторе</Nav.Link>
       <NavDropdown title="Авторизация"  id="collasible-nav-dropdown"  >
         <Form.Control size="sm" type="text" placeholder="Логин" value={login} onChange={e => setLogin(e.target.value)}/>

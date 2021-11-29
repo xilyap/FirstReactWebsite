@@ -37,12 +37,8 @@ export default function EditorContents() {
 		};
 		console.log(JSON.stringify(cookie))
 		var request = new XMLHttpRequest();
-		request.open('POST', '/post-article', true);
-		request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-		request.send(JSON.stringify(cookie));
-		window.location.reload();
 		axios.post(`/post-article`, cookie)
-      	
+		window.location.reload();
 
 
 
