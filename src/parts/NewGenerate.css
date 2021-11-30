@@ -25,11 +25,7 @@
 	align-self: center;
   }
   
-  .main-article h3{
-	background-size: auto;
-	font-weight: bold;
-	padding-bottom: 10pt;
-  }
+
   .main-article button{
 	background-color: #000000;
 	color: #EEEDE7;

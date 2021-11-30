@@ -62,7 +62,7 @@ app.use('/content/articles', function (req, res, next) {
     function goodResAction(){
         //console.log(insertRequest);
         DB().insert('Articles',{Title:req.body.title,Contents:req.body.article})
-        res.sendStatus(500)         
+        res.send(req.body)        
     };
     console.log('Auth Request Type:', req.method);
     console.log('Auth Request Body:', req.body);

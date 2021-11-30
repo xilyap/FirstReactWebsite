@@ -9,17 +9,14 @@ const url = document.url;
 var items;
 
 function App() {
-const [name, setName] = useState(null);
-const [pass, setPass] = useState(false);
-  const cookies = new Cookies();
+    const cookies = new Cookies();
+const [credential, setCredential] = useState(cookies.get('userdata',{ path: '/',sameSite:"strict",secure:true}));
   function Auth(login, password){
 
       var item ={
         name:login,
         pass:password
       };
-      //cookies.set('myCat', item, { path: '/',sameSite:"strict",secure:true});
-      //console.log(cookies.get('myCat'));
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -29,21 +26,18 @@ const [pass, setPass] = useState(false);
         .then(response => response.json())
         .then(data => 
         {
-          setName(data.name);
-          setPass(data.pass);
           console.log(data);
           cookies.set('userdata',data, { path: '/',sameSite:"strict",secure:true})
-          window.location.reload();
+          setCredential(cookies.get('userdata',{ path: '/',sameSite:"strict",secure:true}))
         });
+
   }
   
   function LogOut(){
     console.log('Logging out!')
     cookies.remove('userdata',{ path: '/',sameSite:"strict",secure:true})
-    window.location.reload();
+    setCredential(undefined)
   }
-  const credential = cookies.get('userdata',{ path: '/',sameSite:"strict",secure:true})
-  console.log(credential);
   if (typeof(credential) =='undefined'){
     return (
       <>

@@ -55,7 +55,12 @@ export default function BaseArticle(props) {
 	return (
 		
 		<div className='main-article'>
-		<h3>{props.title}<Button onClick={EditMode} className='justify-content-end' variant="dark">Редактировать</Button><Button onClick={removeArticle} className='justify-content-end' variant="dark">X</Button></h3>
+		<div className='space-between'>
+		<h3>{props.title}</h3>
+			<div><Button onClick={EditMode} className='justify-content-end' variant="dark">Редактировать</Button>
+				<Button onClick={removeArticle} className='justify-content-end' variant="dark">X</Button>
+			</div>
+		</div>
 		<p><MDEditor.Markdown source = {props.article}/></p>
     	</div>
 		
